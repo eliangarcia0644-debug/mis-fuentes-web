@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pasaporte del Cambio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <style type="text/tailwindcss">
+        /* 1. Declaramos cada peso de nuestra fuente Goldplay */
+        /* --- ¡OJO! Revisa que las URLs de tus fuentes sean las correctas para cada peso --- */
+        @font-face {
+            font-family: 'Goldplay';
+            font-style: normal;
+            font-weight: 400; /* Regular */
+            src: url('https://github.com/eliangarcia0644-debug/mis-fuentes-web/raw/refs/heads/main/Goldplay%20Regular.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'Goldplay';
+            font-style: normal;
+            font-weight: 600; /* SemiBold */
+            src: url('https://github.com/eliangarcia0644-debug/mis-fuentes-web/raw/refs/heads/main/Goldplay%20SemiBold.otf') format('opentype');
+        }
+        @font-face {
+            font-family: 'Goldplay';
+            font-style: normal;
+            font-weight: 700; /* Bold */
+            src: url('https://github.com/eliangarcia0644-debug/mis-fuentes-web/raw/refs/heads/main/Goldplay%20Bold.otf') format('opentype');
+        }
+
+        /* 2. Aplicamos la fuente base a toda la página */
+        body {
+            font-family: 'Goldplay', sans-serif;
+            font-weight: 400; /* Por defecto, usamos el peso regular */
+        }
+        
+        /* 3. Usamos los otros pesos en elementos específicos */
+        h1, strong, b {
+           font-weight: 700; /* Hacemos que los títulos y textos en negrita usen la fuente Bold */
+        }
+        
+        :root {
+            --primary-color: #730bda;
+            --gradient-from: #dc2626;
+            --gradient-to: #1e3a8a;
+        }
+
+        /* --- NUEVO: Estilo para el degradado sobre el video --- */
+        .video-overlay {
+            background: linear-gradient(to bottom, var(--gradient-from) 0%, transparent 50%, var(--gradient-to) 100%);
+            opacity: 0.6; /* Puedes ajustar la opacidad del degradado aquí */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="relative min-h-screen w-full overflow-hidden">
+        
+        <div class="absolute inset-0 z-0">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="https://github.com/eliangarcia0644-debug/mis-fuentes-web/raw/refs/heads/main/freepik__dynamic-tracking-shot-two-animated-astronauts-a-yo__71201.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+        </div>
+
+        <div class="absolute inset-0 z-10 video-overlay"></div>
+
+        <div class="relative z-20 flex flex-col items-center justify-center min-h-screen p-4">
+            <main class="flex flex-col items-center text-center max-w-4xl mx-auto">
+                <div class="w-full max-w-2xl aspect-video rounded-xl overflow-hidden shadow-2xl shadow-purple-500/20 mb-8 border-2 border-purple-400/30">
+                    <div class="w-full h-full bg-center bg-cover" style='background-image: url("URL_DE_TU_IMAGEN_PRINCIPAL.jpg");'></div>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-white drop-shadow-[0_2px_4px_rgba(115,11,218,0.8)] mb-4">
+                    Pasaporte del Cambio
+                </h1>
+                <p class="max-w-2xl text-lg md:text-xl text-gray-300 mt-4 leading-relaxed">
+                    Prepárate para un viaje transformador. <strong>Este pasaporte</strong> es tu guía para el crecimiento personal y profesional, lleno de desafíos y recompensas.
+                </p>
+                <a href="URL_DE_LA_OTRA_PAGINA" class="mt-12 px-8 py-4 bg-[var(--primary-color)] text-white font-bold text-lg rounded-md hover:bg-purple-600 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg shadow-purple-500/50">
+                    Iniciar Despegue
+                </a>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
